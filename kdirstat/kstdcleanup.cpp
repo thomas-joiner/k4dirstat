@@ -34,7 +34,7 @@ KStdCleanup::openInKonqueror( KActionCollection *parent )
     cleanup->setRefreshPolicy( KCleanup::noRefresh );
     cleanup->setIcon( "konqueror.png" );
     cleanup->setShortcut( Qt::CTRL + Qt::Key_K );
-    
+
     return cleanup;
 }
 
@@ -62,7 +62,7 @@ KCleanup *
 KStdCleanup::compressSubtree( KActionCollection *parent )
 {
     KCleanup *cleanup = new KCleanup( "cleanup_compress_subtree",
-				      "cd ..; tar cjvf %n.tar.bz2 %n && rm -rf %n",
+				      "cd ..; tar cjvf '%n.tar.bz2' '%n' && rm -rf '%n'",
 				      i18n( "&Compress" ),
 				      parent );
     CHECK_PTR( cleanup );
@@ -128,13 +128,13 @@ KStdCleanup::moveToTrashBin( KActionCollection *parent )
 
     return cleanup;
 }
-	
+
 
 KCleanup *
 KStdCleanup::hardDelete( KActionCollection *parent )
 {
     KCleanup *cleanup = new KCleanup( "cleanup_hard_delete",
-				      "rm -rf %p",
+				      "rm -rf '%p'",
 				      i18n( "&Delete (no way to undelete!)" ),
 				      parent );
     CHECK_PTR( cleanup );
@@ -148,7 +148,7 @@ KStdCleanup::hardDelete( KActionCollection *parent )
 
     return cleanup;
 }
-	
+
 
 
 // EOF
