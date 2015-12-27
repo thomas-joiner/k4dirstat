@@ -1,7 +1,0 @@
-Makefile.in
-Makefile
-*.bak
-*.auto
-*.gmo
-*~
-ui_rc.cpp
